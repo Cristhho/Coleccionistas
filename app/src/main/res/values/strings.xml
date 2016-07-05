@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Coleccionistas</string>
+    <string name="txtname">Nombre</string>
+    <string name="txtuser">Usuario</string>
+    <string name="txtpassword">Contraseña</string>
+    <string name="txtmail">Correo</string>
 </resources>
