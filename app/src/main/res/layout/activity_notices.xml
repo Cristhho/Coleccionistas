@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ayc.coleccionistas.Recomendations"
+    android:background="#ffffff">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/Brown_AC" />
+    <TextView
+        android:id="@+id/textEscogido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtEscogidosParati"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="20dp"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/searchView"
+        android:layout_alignParentStart="true"
+        android:onClick="Recomendations" />
+    <TextView
+        android:id="@+id/textDescrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtDeAcuerdo"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15dp"
+        android:layout_below="@+id/textEscogido"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBtnNew"
+        android:id="@+id/btnNew"
+        android:layout_below="@+id/searchView"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/abc_primary_text_disable_only_material_dark"
+        android:background="@drawable/btn2" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBtnCoins"
+        android:id="@+id/btnCoin"
+        android:layout_marginStart="13dp"
+        android:layout_alignTop="@+id/btnNew"
+        android:layout_toEndOf="@+id/btnNew"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn2" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBtnFActions"
+        android:id="@+id/FigurasAccion"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn2"
+        android:layout_below="@+id/searchView"
+        android:layout_toEndOf="@+id/btnCoin"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtNAcualizacion"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="20dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtDeNActualizacion"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/foto1"
+        android:layout_below="@+id/textDescrip"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/foto1"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:src="@drawable/foto1"
+        android:layout_below="@+id/textDescrip"
+        android:layout_alignEnd="@+id/searchView" />
+
+
+</RelativeLayout>

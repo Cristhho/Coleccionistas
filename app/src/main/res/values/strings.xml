@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">Coleccionistas</string>
-    <string name="txtname">Nombre</string>
-    <string name="txtuser">Usuario</string>
-    <string name="txtpassword">Contraseña</string>
-    <string name="txtmail">Correo</string>
+    <string name="txtname">Nombre:</string>
+    <string name="txtuser">Usuario:</string>
+    <string name="txtpassword">Contraseña:</string>
+    <string name="txtmail">Correo:</string>
+
+    <string name="txtBtnSingIng">Enviar</string>
+    <string name="txtBtnCoins">Monedas</string>
+    <string name="txtBtnNew">Nuevas</string>
+    <string name="txtBtnFActions">Figuras de Accion</string>
+
+    <string name="txtEscogidosParati">Escogidos para ti</string>
+    <string name="txtDeAcuerdo">de acuerdo a los artículos buscados</string>
+    <string name="txtNAcualizacion">Nuevas Actualizaciones</string>
+    <string name="txtDeNActualizacion">Articulos actualizados en las 2 ultimas horas</string>
+
+
 </resources>
