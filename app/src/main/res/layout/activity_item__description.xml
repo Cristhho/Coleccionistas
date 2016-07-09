@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ayc.coleccionistas.Item_Description"
+    android:background="#ffffff">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/Brown_AC" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textName"
+        android:text="@string/txtItemName"
+        android:layout_below="@+id/searchView"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="25sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgItem"
+        android:src="@drawable/foto1"
+        android:layout_below="@+id/textName"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDescrip"
+        android:text="@string/txtDescription"
+        android:layout_below="@+id/imgItem"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDescription"
+        android:text="@string/txtItemDesc"
+        android:ems="15"
+        android:layout_below="@+id/textDescrip"
+        android:textColor="@color/Brow_AC_Bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textDescrip"
+        android:background="@color/Brow_AC_Bold"
+        android:textSize="20sp"
+        android:text="@string/txtPrice"/>
+
+</RelativeLayout>

@@ -18,18 +18,17 @@
         android:layout_height="wrap_content"
         android:text="@string/txtEscogidosParati"
         android:textColor="@color/Brow_AC_Bold"
-        android:textSize="20dp"
-
+        android:textSize="20sp"
         android:layout_below="@+id/searchView2"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        android:layout_marginTop="10dp" />
     <TextView
         android:id="@+id/textDescrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtDeAcuerdo"
         android:textColor="@color/Brow_AC_Bold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:layout_below="@+id/textEscogido"
         android:layout_alignParentStart="true" />
 
@@ -49,7 +48,8 @@
         android:src="@drawable/foto1"
         android:layout_below="@+id/textDescrip"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="17dp"
+        android:onClick="viewItem"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -57,7 +57,8 @@
         android:id="@+id/imageView6"
         android:src="@drawable/foto1"
         android:layout_below="@+id/imageView5"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:onClick="viewItem"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -65,7 +66,8 @@
         android:id="@+id/imageView7"
         android:src="@drawable/foto1"
         android:layout_alignTop="@+id/imageView5"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="viewItem"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -73,7 +75,8 @@
         android:id="@+id/imageView8"
         android:src="@drawable/foto1"
         android:layout_alignTop="@+id/imageView6"
-        android:layout_toEndOf="@+id/imageView6" />
+        android:layout_toEndOf="@+id/imageView6"
+        android:onClick="viewItem"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -81,7 +84,8 @@
         android:id="@+id/imageView9"
         android:src="@drawable/foto1"
         android:layout_above="@+id/imageView8"
-        android:layout_toEndOf="@+id/imageView7" />
+        android:layout_toEndOf="@+id/imageView7"
+        android:onClick="viewItem"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -89,6 +93,7 @@
         android:id="@+id/imageView10"
         android:src="@drawable/foto1"
         android:layout_toEndOf="@+id/imageView8"
-        android:layout_alignTop="@+id/imageView8" />
+        android:layout_alignTop="@+id/imageView8"
+        android:onClick="viewItem"/>
 
 </RelativeLayout>

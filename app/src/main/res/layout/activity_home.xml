@@ -22,7 +22,6 @@
 
     <TextView
         android:id="@+id/textViewName"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtname"
@@ -33,7 +32,6 @@
 
     <EditText
         android:id="@+id/editTextName"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -46,7 +44,6 @@
 
     <TextView
         android:id="@+id/textViewMail"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtmail"
@@ -57,7 +54,6 @@
     <EditText
         android:id="@+id/editTextMail"
         android:layout_below="@+id/textViewMail"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -68,7 +64,6 @@
         android:layout_centerHorizontal="true" />
     <TextView
         android:id="@+id/textViewPassword"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtpassword"
@@ -78,7 +73,6 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"

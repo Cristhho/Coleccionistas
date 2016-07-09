@@ -16,7 +16,7 @@ public class Notices extends AppCompatActivity {
          Recomendados = (TextView) findViewById(R.id.textEscogido) ;
     }
 
-    public void Recomendations (View view){
+    public void Recommendations (View view){
 
         Intent i = new Intent(this, Recomendations.class);
         startActivity(i);

@@ -15,5 +15,10 @@
     <string name="txtNAcualizacion">Nuevas Actualizaciones</string>
     <string name="txtDeNActualizacion">Articulos actualizados en las 2 ultimas horas</string>
 
+    <string name="txtItemName">Nombre del articulo</string>
+    <string name="txtDescription">Descripción</string>
+    <string name="txtItemDesc">Descripción del artículo seleccionado</string>
+    <string name="txtPrice">Precio</string>
+
 
 </resources>
