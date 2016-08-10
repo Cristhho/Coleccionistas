@@ -8,8 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ayc.coleccionistas.Recomendations"
-    android:background="#ffffff">
-
+    android:background="@color/white">
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +20,7 @@
         android:background="@color/Brown_AC" />
     <TextView
         android:id="@+id/textEscogido"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtEscogidosParati"
         android:textColor="@color/Brow_AC_Bold"
@@ -31,15 +30,30 @@
         android:layout_alignParentStart="true"
         android:onClick="Recommendations" />
     <TextView
-        android:id="@+id/textDescrip"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtVerMas"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15sp"
+        android:layout_above="@+id/textDescrip"
+        android:layout_alignEnd="@+id/textEscogido"/>
+    <TextView
+        android:id="@+id/textDescrip"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtDeAcuerdo"
         android:textColor="@color/Brow_AC_Bold"
         android:textSize="15sp"
         android:layout_below="@+id/textEscogido"
         android:layout_alignParentStart="true" />
-
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridEscogidos"
+        android:verticalSpacing="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textDescrip">
+    </GridView>
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -51,13 +65,14 @@
         android:layout_below="@+id/searchView"
         android:layout_alignParentStart="true"
         android:textColor="#ffffff"
-        android:background="@color/Brow_AC_Bold" />
+        android:background="@color/Brow_AC_Bold"
+        android:onClick="Updates"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txtBtnCoins"
+        android:text="@string/txtBtnCategories"
         android:id="@+id/btnCoin"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -71,7 +86,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txtBtnFActions"
+        android:text="@string/txtBtnAuctions"
         android:id="@+id/FigurasAccion"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -83,48 +98,40 @@
 
     <TextView
         android:id="@+id/textAct"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtNAcualizacion"
         android:textColor="@color/Brow_AC_Bold"
         android:textSize="20sp"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/gridEscogidos"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="30dp"
+        android:onClick="Updates"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtVerMas"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15sp"
+        android:layout_above="@+id/textActDesc"
+        android:layout_alignEnd="@+id/textAct"/>
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/textActDesc"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtDeNActualizacion"
         android:textColor="@color/Brow_AC_Bold"
         android:textSize="15sp"
         android:layout_below="@+id/textAct"
         android:layout_alignParentStart="true"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
+    <GridView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
-        android:src="@drawable/foto1"
-        android:layout_below="@+id/textDescrip"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/gridNews"
+        android:layout_below="@+id/textActDesc"
+        android:layout_marginTop="10dp"
+        android:verticalSpacing="10dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:src="@drawable/foto1"
-        android:layout_alignTop="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView4"
-        android:src="@drawable/foto1"
-        android:layout_below="@+id/textDescrip"
-        android:layout_alignEnd="@+id/searchView" />
-
-
+    </GridView>
 </RelativeLayout>

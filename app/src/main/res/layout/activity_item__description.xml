@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ayc.coleccionistas.Item_Description"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <SearchView
         android:layout_width="match_parent"
@@ -28,15 +28,16 @@
         android:text="@string/txtItemName"
         android:layout_below="@+id/searchView"
         android:textColor="@color/Brow_AC_Bold"
-        android:textSize="25sp"/>
+        android:textSize="15sp"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
         android:id="@+id/imgItem"
         android:src="@drawable/foto1"
         android:layout_below="@+id/textName"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerInside"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +46,7 @@
         android:text="@string/txtDescription"
         android:layout_below="@+id/imgItem"
         android:textColor="@color/Brow_AC_Bold"
-        android:textSize="15sp"/>
+        android:textSize="25sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,11 +57,13 @@
         android:textColor="@color/Brow_AC_Bold"/>
 
     <TextView
+        android:id="@+id/textPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textDescrip"
         android:background="@color/Brow_AC_Bold"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:text="@string/txtPrice"/>
 

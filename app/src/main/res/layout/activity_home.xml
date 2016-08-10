@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ayc.coleccionistas.Home"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -26,9 +26,10 @@
         android:layout_height="wrap_content"
         android:text="@string/txtname"
         android:textColor="@color/Brown_AC"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="80dp"
         android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/editTextName" />
+        android:layout_alignStart="@+id/editTextName"
+        android:labelFor="@id/editTextName"/>
 
     <EditText
         android:id="@+id/editTextName"
@@ -49,7 +50,7 @@
         android:text="@string/txtmail"
         android:textColor="@color/Brown_AC"
         android:layout_below="@+id/editTextName"
-        android:layout_alignStart="@+id/editTextName" />
+        android:layout_alignStart="@+id/editTextName"/>
 
     <EditText
         android:id="@+id/editTextMail"
@@ -69,7 +70,7 @@
         android:text="@string/txtpassword"
         android:textColor="@color/Brown_AC"
         android:layout_below="@+id/editTextMail"
-        android:layout_alignStart="@+id/editTextName" />
+        android:layout_alignStart="@+id/editTextName"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -93,8 +94,5 @@
         android:background="@drawable/btn"
         android:layout_below="@+id/editTextPassword"
         android:layout_toEndOf="@+id/textViewPassword" />
-
-
-
 
 </RelativeLayout>

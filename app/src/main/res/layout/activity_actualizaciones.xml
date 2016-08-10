@@ -8,29 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ayc.coleccionistas.Recomendations"
-    android:clickable="false"
+    tools:context="com.ayc.coleccionistas.Actualizaciones"
     android:background="@color/white">
-
-    <TextView
-        android:id="@+id/textEscogido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtEscogidosParati"
-        android:textColor="@color/Brow_AC_Bold"
-        android:textSize="20sp"
-        android:layout_below="@+id/searchView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:id="@+id/textDescrip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtDeAcuerdo"
-        android:textColor="@color/Brow_AC_Bold"
-        android:textSize="15sp"
-        android:layout_below="@+id/textEscogido"
-        android:layout_alignParentStart="true" />
 
     <SearchView
         android:layout_width="match_parent"
@@ -40,14 +19,32 @@
         android:layout_alignParentStart="true"
         android:goIcon="@color/Brown_AC"
         android:background="@color/Brown_AC" />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textNuevos"
+        android:text="@string/txtNAcualizacion"
+        android:layout_below="@+id/searchView2"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/textNuevosDescrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtDeNActualizacion"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="15sp"
+        android:layout_below="@+id/textNuevos"
+        android:layout_alignParentStart="true" />
     <GridView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/gridEscogidosFull"
+        android:id="@+id/gridNewsFull"
         android:verticalSpacing="10dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/textDescrip"
+        android:layout_below="@+id/textNuevosDescrip"
         android:numColumns="3">
     </GridView>
 

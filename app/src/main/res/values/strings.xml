@@ -6,14 +6,15 @@
     <string name="txtmail">Correo:</string>
 
     <string name="txtBtnSingIng">Enviar</string>
-    <string name="txtBtnCoins">Monedas</string>
-    <string name="txtBtnNew">Nuevas</string>
-    <string name="txtBtnFActions">Figuras de Accion</string>
+    <string name="txtBtnAuctions">Subastas</string>
+    <string name="txtBtnNew">Nuevos</string>
+    <string name="txtBtnCategories">Categorias</string>
 
     <string name="txtEscogidosParati">Escogidos para ti</string>
-    <string name="txtDeAcuerdo">de acuerdo a los artículos buscados</string>
+    <string name="txtDeAcuerdo">De acuerdo a los artículos buscados</string>
     <string name="txtNAcualizacion">Nuevas Actualizaciones</string>
-    <string name="txtDeNActualizacion">Articulos actualizados en las 2 ultimas horas</string>
+    <string name="txtDeNActualizacion">Últimos articulos agregados</string>
+    <string name="txtVerMas">Ver más</string>
 
     <string name="txtItemName">Nombre del articulo</string>
     <string name="txtDescription">Descripción</string>
