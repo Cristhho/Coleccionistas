@@ -7,9 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-/**
- * Created by HOME on 10/08/2016.
- */
 public class EscogidosFullAdapter extends BaseAdapter {
 
     private Context mContext;

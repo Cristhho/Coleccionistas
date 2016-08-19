@@ -1,12 +1,12 @@
 package com.ayc.coleccionistas;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Item_Description extends AppCompatActivity {
+public class Item_Description extends Activity {
 
     private ImageView itemImg;
     private TextView itemName,itemDescrip,itemPrice;

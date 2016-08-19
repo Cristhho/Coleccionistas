@@ -43,7 +43,7 @@ public class Home extends Activity {
         });
     }
     public void SingIng (View view){
-        if(name.getText().toString().equals(null) || name.getText().toString().equals("")){
+        if(name.getText().toString().equals("")){
             alert.setMessage("Ingrese un nombre de usuario");
             alert.create();
             alert.show();

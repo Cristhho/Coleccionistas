@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Coleccionistas</string>
+    <string name="app_name">AyC</string>
     <string name="txtname">Nombre:</string>
     <string name="txtuser">Usuario:</string>
     <string name="txtpassword">Contraseña:</string>
@@ -21,5 +21,18 @@
     <string name="txtItemDesc">Descripción del artículo seleccionado</string>
     <string name="txtPrice">Precio</string>
 
+    <string-array name="tags">
+        <item>User name</item>
+        <item>Monedas</item>
+        <item>Figuras de acción</item>
+        <item>Estampillas</item>
+        <item>Esculturas</item>
+        <item>Pinturas</item>
+        <item>Autos</item>
+        <item>Subastas</item>
+    </string-array>
+
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
 
 </resources>
