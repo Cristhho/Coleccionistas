@@ -31,13 +31,12 @@ public class RegistrarUsuario extends Activity {
     private static final String TAG = Home.class.getSimpleName();
     private RequestQueue request;
 
-    private static  String URL_CONSULTA_SINGIN ="http://192.168.1.3/coleccionistas/singin.php";
+    private static  String URL_CONSULTA_SINGIN ="http://192.168.1.5/coleccionistas/singin.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         request = Volley.newRequestQueue(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_usuario);
-//nameE,userE,lastnameE, mailE, passwordE,password2E;
         nameE = (EditText)findViewById(R.id.editTextnameE);
         userE = (EditText)findViewById(R.id.editTextUserE);
         lastnameE = (EditText)findViewById(R.id.editTextLastnameE);
@@ -91,7 +90,7 @@ public class RegistrarUsuario extends Activity {
         pass2 =  password2E.getText().toString() ;
        // http://192.168.1.3/coleccionistas/singin.php?nombre=Alberto&apellido=Ordonez+Urgiles&usuarioR=Alberto&contrasena=1234&contrasena2=1234&correo=alberto%40gmail.com
 
-        URL_CONSULTA_SINGIN  = "http://192.168.1.3/coleccionistas/singin.php?nombre="+name+"&apellido="+lastname+"&usuarioR="+user+"&contrasena="+pass+"&contrasena2="+pass2+"&correo="+mail;
+        URL_CONSULTA_SINGIN  = "http://192.168.1.5/coleccionistas/singin.php?nombre="+name+"&apellido="+lastname+"&usuarioR="+user+"&contrasena="+pass+"&contrasena2="+pass2+"&correo="+mail;
         System.out.println(URL_CONSULTA_SINGIN );
 
         request.add(

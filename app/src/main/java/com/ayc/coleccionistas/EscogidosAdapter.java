@@ -26,8 +26,8 @@ import java.util.List;
 
 public class EscogidosAdapter extends BaseAdapter {
 
-    private static final String URL_Image = "http://10.0.2.2/coleccionistas";
-    private static final String URL = "http://10.0.2.2/coleccionistas/consulta_escogidos.php";
+    private static final String URL_Image = "http://192.168.1.5/coleccionistas";
+    private static final String URL = "http://192.168.1.5/coleccionistas/consulta_escogidos.php";
     private static final String TAG = Notices.class.getSimpleName();
 
     private Context mContext;
