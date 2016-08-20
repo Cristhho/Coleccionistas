@@ -38,7 +38,7 @@ public class Home extends Activity {
     private boolean fuser = false;
     static String NAME ="";
     private static final String TAG = Home.class.getSimpleName();
-    private static  String URL_CONSULTA_lOGIN ="http://10.0.2.2/coleccionistas/login.php";
+    private static  String URL_CONSULTA_lOGIN ="http://transespol.gob.ec/coleccionistas/login.php";
 
     private RequestQueue request;
     @Override
@@ -83,8 +83,9 @@ public void SingIng (View view){
     public void Longin(View v){
         String usuario = name.getText().toString();
         String contrasena = password.getText().toString();
+        //http://transespol.gob.ec/coleccionistas/login.php
 
-        URL_CONSULTA_lOGIN  = "http://10.0.2.2/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
+        URL_CONSULTA_lOGIN  = "http://transespol.gob.ec/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
         System.out.println(URL_CONSULTA_lOGIN );
 
         request.add(
