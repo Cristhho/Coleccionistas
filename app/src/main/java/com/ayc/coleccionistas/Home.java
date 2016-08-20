@@ -38,7 +38,7 @@ public class Home extends Activity {
     private boolean fuser = false;
     static String NAME ="";
     private static final String TAG = Home.class.getSimpleName();
-    private static  String URL_CONSULTA_lOGIN ="http://192.168.1.5/coleccionistas/login.php";
+    private static  String URL_CONSULTA_lOGIN ="http://10.0.2.2/coleccionistas/login.php";
 
     private RequestQueue request;
     @Override
@@ -84,7 +84,7 @@ public void SingIng (View view){
         String usuario = name.getText().toString();
         String contrasena = password.getText().toString();
 
-        URL_CONSULTA_lOGIN  = "http://192.168.1.5/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
+        URL_CONSULTA_lOGIN  = "http://10.0.2.2/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
         System.out.println(URL_CONSULTA_lOGIN );
 
         request.add(
