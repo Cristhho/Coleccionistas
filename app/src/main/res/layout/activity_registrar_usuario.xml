@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtBtnSingIng"
         android:id="@+id/buttonSing"
-        android:onClick="Longin"
+        android:onClick="Singin"
         android:textColor="@color/Brown_AC"
         android:singleLine="true"
         android:background="@drawable/btn"

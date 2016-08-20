@@ -47,7 +47,7 @@ public class Home extends Activity {
 
         setContentView(R.layout.activity_home);
         name = (EditText)findViewById(R.id.editTextName);
-        mail = (EditText)findViewById(R.id.editTextMail);
+
         password = (EditText)findViewById(R.id.editTextPassword);
         request = Volley.newRequestQueue(this);
 
@@ -62,7 +62,7 @@ public class Home extends Activity {
                     password.setText("");
                 } else {
                     name.setText("");
-                    mail.setText("");
+
                     password.setText("");
                 }
             }
