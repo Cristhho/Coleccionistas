@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AyC</string>
     <string name="txtname">Nombre:</string>
+    <string name="txtApellido">Apellido:</string>
     <string name="txtuser">Usuario:</string>
     <string name="txtpassword">Contraseña:</string>
     <string name="txtmail">Correo:</string>

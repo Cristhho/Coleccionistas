@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ayc.coleccionistas.RegistrarUsuario"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="Registrate"
+        android:textColor="@color/Brown_AC"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textSize="30dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/txtname"
+        android:ems="10"
+        android:id="@+id/editTextnameE"
+        android:textColor="@color/Brown_AC"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/txtApellido"
+        android:textColor="@color/Brown_AC"
+        android:ems="10"
+        android:id="@+id/editTextLastnameE" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtuser"
+        android:ems="10"
+        android:textColor="@color/Brown_AC"
+        android:id="@+id/editTextUserE"
+        android:layout_gravity="center_horizontal" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:text="@string/txtmail"
+        android:ems="10"
+        android:textColor="@color/Brown_AC"
+        android:id="@+id/editTextmailE"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtpassword"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:textColor="@color/Brown_AC"
+        android:id="@+id/editTextpassE" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:text="@string/txtpassword"
+        android:ems="10"
+        android:id="@+id/editTextpass2E"
+        android:textColor="@color/Brown_AC" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBtnSingIng"
+        android:id="@+id/buttonSing"
+        android:onClick="Longin"
+        android:textColor="@color/Brown_AC"
+        android:singleLine="true"
+        android:background="@drawable/btn"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

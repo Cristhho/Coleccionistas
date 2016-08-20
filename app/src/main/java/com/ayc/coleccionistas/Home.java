@@ -50,8 +50,7 @@ public class Home extends Activity {
         mail = (EditText)findViewById(R.id.editTextMail);
         password = (EditText)findViewById(R.id.editTextPassword);
         request = Volley.newRequestQueue(this);
-        user = "cristhian";
-        pass = "12345";
+
         alert = new AlertDialog.Builder(this);
         alert.setIcon(R.drawable.icon);
         alert.setTitle("ERROR");
@@ -71,20 +70,17 @@ public class Home extends Activity {
     }
 
 
+public void SingIng (View view){
+
+    Intent intend = new Intent(getApplicationContext(),RegistrarUsuario.class );
+
+    startActivity(intend);
+
+}
 
 
 
-    public void SingIng (View view){
-
-        String usuario = name.getText().toString();
-        String contrasena = password.getText().toString();
-
-
-         System.out.println("Ha tocado botn");
-
-
-    }
-    public void consultar(View v){
+    public void Longin(View v){
         String usuario = name.getText().toString();
         String contrasena = password.getText().toString();
 
