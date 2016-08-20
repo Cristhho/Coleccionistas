@@ -5,8 +5,30 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class Home extends Activity {
 
@@ -14,7 +36,11 @@ public class Home extends Activity {
     private AlertDialog.Builder alert;
     private String user,pass;
     private boolean fuser = false;
+    static String NAME ="";
+    private static final String TAG = Home.class.getSimpleName();
+    private static  String URL_CONSULTA_lOGIN ="http://192.168.1.3/coleccionistas/login.php";
 
+    private RequestQueue request;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +49,7 @@ public class Home extends Activity {
         name = (EditText)findViewById(R.id.editTextName);
         mail = (EditText)findViewById(R.id.editTextMail);
         password = (EditText)findViewById(R.id.editTextPassword);
+        request = Volley.newRequestQueue(this);
         user = "cristhian";
         pass = "12345";
         alert = new AlertDialog.Builder(this);
@@ -42,28 +69,70 @@ public class Home extends Activity {
             }
         });
     }
+
+
+
+
+
     public void SingIng (View view){
-        if(name.getText().toString().equals("")){
-            alert.setMessage("Ingrese un nombre de usuario");
-            alert.create();
-            alert.show();
-        } else if (password.getText().toString().equals(null) || password.getText().toString().equals("")){
-            fuser = true;
-            alert.setMessage("Ingrese su contraseña");
-            alert.create();
-            alert.show();
-        } else if (!name.getText().toString().equals(user)){
-            alert.setMessage("Usuario incorrecto");
-            alert.create();
-            alert.show();
-        } else if(!password.getText().toString().equals(pass)){
-            fuser = true;
-            alert.setMessage("Contraseña incorrecta");
-            alert.create();
-            alert.show();
-        } else {
-            Intent i = new Intent(this,Notices.class );
-            startActivity(i);
-        }
+
+        String usuario = name.getText().toString();
+        String contrasena = password.getText().toString();
+
+
+         System.out.println("Ha tocado botn");
+
+
+    }
+    public void consultar(View v){
+        String usuario = name.getText().toString();
+        String contrasena = password.getText().toString();
+
+        URL_CONSULTA_lOGIN  = "http://192.168.1.3/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
+
+
+        request.add(
+                new JsonObjectRequest(Request.Method.POST, URL_CONSULTA_lOGIN,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                JSONArray jsonArray;
+                                try {
+                                    jsonArray = response.getJSONArray("Usuarios");
+                                    for(int i=0; i<jsonArray.length(); i++){
+                                        try{
+                                            JSONObject objeto= jsonArray.getJSONObject(i);
+
+                                                   String name = objeto.getString("usuario_nombre");
+                                                   String lastname = objeto.getString("usuario_apellido");
+
+                                                Log.d(TAG, "Nombre " + objeto.getString("usuario_nombre"));
+                                                Log.d(TAG, "Apellido " + objeto.getString("usuario_apellido"));
+                                                Log.d(TAG, "User " + objeto.getString("usuario_usuario"));
+                                            Intent intend = new Intent(getApplicationContext(),Notices.class );
+
+                                            intend.putExtra("Nombre",name);
+                                            intend.putExtra("Apellido",lastname);
+                                            startActivity(intend);
+
+
+                                        }catch (JSONException e) {
+                                            Log.e(TAG, "Error de parsing: "+ e.getMessage());
+                                        }
+                                    }
+                                }catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Algo va mal",Toast.LENGTH_SHORT).show();
+                                //Log.d(TAG, "ERROR VOLLEY: " + error.getMessage());
+                            }
+                        }
+                ));
     }
 }
