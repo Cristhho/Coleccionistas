@@ -8,27 +8,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Home extends Activity {
 
@@ -38,7 +32,7 @@ public class Home extends Activity {
     private boolean fuser = false;
     static String NAME ="";
     private static final String TAG = Home.class.getSimpleName();
-    private static  String URL_CONSULTA_lOGIN ="http://transespol.gob.ec/coleccionistas/login.php";
+    private static final String URL_CONSULTA_lOGIN ="http://10.0.2.2/coleccionistas/login.php";
 
     private RequestQueue request;
     @Override
@@ -81,43 +75,18 @@ public void SingIng (View view){
 
 
     public void Longin(View v){
-        String usuario = name.getText().toString();
-        String contrasena = password.getText().toString();
-        //http://transespol.gob.ec/coleccionistas/login.php
-
-        URL_CONSULTA_lOGIN  = "http://transespol.gob.ec/coleccionistas/login.php?usuario="+usuario+"&contrasena="+contrasena;
-        System.out.println(URL_CONSULTA_lOGIN );
+        final String usuario = name.getText().toString();
+        final String contrasena = password.getText().toString();
 
         request.add(
-                new JsonObjectRequest(Request.Method.POST, URL_CONSULTA_lOGIN,
-                        new Response.Listener<JSONObject>() {
+                new StringRequest(Request.Method.POST, URL_CONSULTA_lOGIN,
+                        new Response.Listener<String>() {
                             @Override
-                            public void onResponse(JSONObject response) {
-                                JSONArray jsonArray;
-                                try {
-                                    jsonArray = response.getJSONArray("Usuarios");
-                                    for(int i=0; i<jsonArray.length(); i++){
-                                        try{
-                                            JSONObject objeto= jsonArray.getJSONObject(i);
-
-                                                   String name = objeto.getString("usuario_nombre");
-                                                   String lastname = objeto.getString("usuario_apellido");
-
-                                                Log.d(TAG, "Nombre " + objeto.getString("usuario_nombre"));
-                                                Log.d(TAG, "Apellido " + objeto.getString("usuario_apellido"));
-                                                Log.d(TAG, "User " + objeto.getString("usuario_usuario"));
-                                            Intent intend = new Intent(getApplicationContext(),Notices.class );
-
-                                            intend.putExtra("Nombre",name);
-                                            intend.putExtra("Apellido",lastname);
-                                            startActivity(intend);
-
-
-                                        }catch (JSONException e) {
-                                            Log.e(TAG, "Error de parsing: "+ e.getMessage());
-                                        }
-                                    }
-                                }catch (JSONException e) {
+                            public void onResponse(String response) {
+                                try{
+                                    JSONObject oJson = new JSONObject(response);
+                                    procesarRespuesta(oJson);
+                                }catch (JSONException e){
                                     e.printStackTrace();
                                 }
                             }
@@ -125,11 +94,44 @@ public void SingIng (View view){
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext(),
-                                        "Algo va mal",Toast.LENGTH_SHORT).show();
-                                //Log.d(TAG, "ERROR VOLLEY: " + error.getMessage());
+                                alert.setMessage("Usuario o contraseña incorrectos");
+                                alert.show();
                             }
                         }
-                ));
+                ){
+                    @Override
+                    protected Map<String,String> getParams()throws AuthFailureError {
+                        Map<String,String> parameters = new HashMap<>();
+                        parameters.put("usuario",usuario);
+                        parameters.put("contrasena",contrasena);
+                        return parameters;
+                    }
+                }
+        );
+    }
+
+    private void procesarRespuesta(JSONObject response){
+        JSONArray jsonArray;
+        try {
+            jsonArray = response.getJSONArray("Usuarios");
+            for(int i=0; i<jsonArray.length(); i++){
+                try{
+                    JSONObject objeto= jsonArray.getJSONObject(i);
+
+                    String name = objeto.getString("usuario_usuario");
+
+                    Intent intend = new Intent(getApplicationContext(),Notices.class );
+
+                    intend.putExtra("User",name);
+                    startActivity(intend);
+
+
+                }catch (JSONException e) {
+                    Log.e(TAG, "Error de parsing: "+ e.getMessage());
+                }
+            }
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

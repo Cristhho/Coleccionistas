@@ -31,7 +31,7 @@ public class RegistrarUsuario extends Activity {
     private static final String TAG = Home.class.getSimpleName();
     private RequestQueue request;
 
-    private static  String URL_CONSULTA_SINGIN ="http://108.170.38.42/coleccionistas/singin.php";
+    private static  String URL_CONSULTA_SINGIN ="http://10.0.2.2/coleccionistas/singin.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         request = Volley.newRequestQueue(this);

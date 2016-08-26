@@ -36,15 +36,15 @@ public class Notices extends Activity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.left_drawer);
         mTitle = mDrawerTitle = getTitle();
+        String user = getIntent().getStringExtra("User");
         ArrayList<DrawerItem> items = new ArrayList<DrawerItem>();
-        items.add(new DrawerItem(tagTitles[0],R.drawable.icon));
+        items.add(new DrawerItem(user,R.drawable.icon));
         items.add(new DrawerItem(tagTitles[1],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[2],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[3],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[4],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[5],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[6],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[7],R.drawable.icon));
         drawerList.setAdapter(new DrawerListAdapter(this, items));
         drawerToggle = new ActionBarDrawerToggle(
                 this,

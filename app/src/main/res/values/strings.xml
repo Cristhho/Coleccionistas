@@ -30,7 +30,6 @@
         <item>Esculturas</item>
         <item>Pinturas</item>
         <item>Autos</item>
-        <item>Subastas</item>
     </string-array>
 
     <string name="drawer_open">open drawer</string>
