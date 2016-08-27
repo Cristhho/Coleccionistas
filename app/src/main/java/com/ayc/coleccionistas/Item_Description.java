@@ -26,7 +26,7 @@ public class Item_Description extends Activity {
         String src = i.getExtras().getString("source");
         if(src.equals("rec")){
 
-            itemImg.setImageResource(efa.getItem(id));
+           // itemImg.setImageResource(efa.getItem(id));
         } else if (src.equals("actual")){
             //itemImg.setImageResource(afa.getItem(id));
         }

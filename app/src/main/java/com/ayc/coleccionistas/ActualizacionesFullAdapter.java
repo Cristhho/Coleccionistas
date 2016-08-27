@@ -39,17 +39,6 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
     private RequestQueue request;
     private Context mContext;
 
-    private Integer[] images = {
-            R.drawable.act1,
-            R.drawable.act2,
-            R.drawable.act3,
-            R.drawable.esc1,
-            R.drawable.esc2,
-            R.drawable.esc3
-    };
-
-
-
     public ActualizacionesFullAdapter(Context c){
         mContext = c;
         //super(mContext,0);
@@ -127,24 +116,6 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
     }
 
 
-
-
-
-
-
-    /*public int getCount(){
-        return images.length;
-    }
-
-    public Integer getItem(int position){
-        return images[position];
-    }
-
-    public long getItemId(int position){
-        return 0;
-    }*/
-
-
     public int getCount(){
         return items != null ? items.size() : 0;
     }
@@ -194,18 +165,5 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
         return listItemView;
     }
 
-   /* public View getView(int position, View convertView, ViewGroup parent){
-        ImageView imageView;
-        if (convertView == null) {
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(240, 240));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(0, 0, 0, 0);
-        } else {
-            imageView = (ImageView) convertView;
-        }
-        imageView.setImageResource(images[position]);
-        return imageView;
 
-    }*/
 }
