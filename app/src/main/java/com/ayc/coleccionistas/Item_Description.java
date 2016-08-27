@@ -10,7 +10,7 @@ public class Item_Description extends Activity {
 
     private ImageView itemImg;
     private TextView itemName,itemDescrip,itemPrice;
-
+    private static final String URL_Image = "http://10.0.2.2/coleccionistas";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +25,10 @@ public class Item_Description extends Activity {
         String price = i.getExtras().getString("price");
         String src = i.getExtras().getString("source");
         if(src.equals("rec")){
+
             itemImg.setImageResource(efa.getItem(id));
         } else if (src.equals("actual")){
-            itemImg.setImageResource(afa.getItem(id));
+            //itemImg.setImageResource(afa.getItem(id));
         }
         itemName = (TextView)findViewById(R.id.textName);
         itemDescrip = (TextView)findViewById(R.id.textDescription);
