@@ -3,6 +3,7 @@ package com.ayc.coleccionistas;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -26,6 +27,7 @@ public class Notices extends Activity {
     private CharSequence mTitle;
     EscogidosAdapter ea;
     ActualizacionesAdapter aa;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,10 @@ public class Notices extends Activity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.left_drawer);
         mTitle = mDrawerTitle = getTitle();
-        String user = getIntent().getStringExtra("User");
+        user = getIntent().getStringExtra("User");
         ArrayList<DrawerItem> items = new ArrayList<DrawerItem>();
         items.add(new DrawerItem(user,R.drawable.icon));
+        items.add(new DrawerItem(tagTitles[0],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[1],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[2],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[3],R.drawable.icon));
@@ -46,6 +49,12 @@ public class Notices extends Activity {
         items.add(new DrawerItem(tagTitles[5],R.drawable.icon));
         items.add(new DrawerItem(tagTitles[6],R.drawable.icon));
         drawerList.setAdapter(new DrawerListAdapter(this, items));
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItem(position);
+            }
+        });
         drawerToggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
@@ -140,6 +149,19 @@ public class Notices extends Activity {
     public void Updates (View view){
         Intent u = new Intent(this,Actualizaciones.class);
         startActivity(u);
+    }
+
+    private void selectItem(int position) {
+        if (position > 0){
+            Intent categoria = new Intent(this, Categorias.class);
+            String cat = tagTitles[position - 1];
+            categoria.putExtra("categoria", cat);
+            categoria.putExtra("User",user);
+            startActivity(categoria);
+        } else {
+            Log.d("Usuario:",user);
+        }
+        drawerLayout.closeDrawer(drawerList);
     }
 
 }

@@ -2,14 +2,15 @@ package com.ayc.coleccionistas;
 
 public class Producto {
     private long id;
-    private String nombre, descripcion, precio, imagen;
+    private String nombre, descripcion, precio, imagen, categoria;
 
-    public Producto (long id, String nombre, String descripcion, String precio, String imagen) {
+    public Producto (long id, String nombre, String descripcion, String precio, String imagen, String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.imagen = imagen;
+        this.categoria = categoria;
     }
 
     public long getId() {
@@ -30,6 +31,10 @@ public class Producto {
 
     public String getImagen() {
         return imagen;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 
     public void setId(long id) {

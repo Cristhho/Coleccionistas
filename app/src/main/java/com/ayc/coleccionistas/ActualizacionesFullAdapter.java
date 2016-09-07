@@ -28,9 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by HOME on 10/08/2016.
- */
 public class ActualizacionesFullAdapter extends BaseAdapter {
     private static final String URL_Image = "http://10.0.2.2/coleccionistas";
     private static final String URL = "http://10.0.2.2/coleccionistas/consulta_escogidos.php";
@@ -41,7 +38,6 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
 
     public ActualizacionesFullAdapter(Context c){
         mContext = c;
-        //super(mContext,0);
         request = Volley.newRequestQueue(c);
         request.add(
                 new StringRequest(Request.Method.GET, URL,
@@ -50,7 +46,6 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
                             public void onResponse(String response) {
                                 try{
                                     JSONObject oJson = new JSONObject(response);
-                                    //Log.d(TAG,response);
                                     items = parseJson(oJson);
                                 }catch (JSONException e){
                                     e.printStackTrace();
@@ -89,7 +84,7 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
             // Obtener el array del objeto
             jsonArray = jsonObject.getJSONArray("productos");
 
-            for(int i=0; i<jsonArray.length(); i++){
+            for(int i=jsonArray.length()-1; i>=0; i--){
 
                 try {
                     JSONObject objeto= jsonArray.getJSONObject(i);
@@ -100,7 +95,8 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
                             objeto.getString("nombre"),
                             objeto.getString("descripcion"),
                             objeto.getString("precio"),
-                            img);
+                            img,
+                            objeto.getString("categoria"));
 
                     productos.add(producto);
 
@@ -140,11 +136,8 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
         titulo.setText(producto.getNombre());
         TextView description = (TextView)listItemView.findViewById(R.id.textoDescripcionP);
         description.setText(producto.getDescripcion());
-        TextView precio = (TextView)listItemView.findViewById(R.id.textoPrecioP);
-        precio.setText(""+producto.getPrecio());
         final String img = producto.getImagen();
         final ImageView imagenProducto = (ImageView)listItemView.findViewById(R.id.imagenProductoE);
-        Log.d(TAG,URL_Image + img);
         request.add(
                 new ImageRequest(URL_Image + producto.getImagen(),
                         new Response.Listener<Bitmap>() {
@@ -164,6 +157,5 @@ public class ActualizacionesFullAdapter extends BaseAdapter {
         );
         return listItemView;
     }
-
 
 }

@@ -87,20 +87,6 @@
         android:textColor="#ffffff"
         android:background="@color/Brow_AC_Bold" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtBtnAuctions"
-        android:id="@+id/FigurasAccion"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:textColor="#ffffff"
-        android:background="@color/Brow_AC_Bold"
-        android:layout_below="@+id/searchView"
-        android:layout_toEndOf="@+id/btnCoin"
-        android:layout_marginStart="10dp" />
-
     <TextView
         android:id="@+id/textAct"
         android:layout_width="match_parent"

@@ -23,13 +23,13 @@
     <string name="txtPrice">Precio</string>
 
     <string-array name="tags">
-        <item>User name</item>
-        <item>Monedas</item>
-        <item>Figuras de acción</item>
-        <item>Estampillas</item>
-        <item>Esculturas</item>
-        <item>Pinturas</item>
-        <item>Autos</item>
+        <item>monedas</item>
+        <item>figuras de accion</item>
+        <item>comics</item>
+        <item>videojuegos</item>
+        <item>pinturas</item>
+        <item>autos</item>
+        <item>otros</item>
     </string-array>
 
     <string name="drawer_open">open drawer</string>

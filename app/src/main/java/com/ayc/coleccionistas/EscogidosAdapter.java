@@ -100,13 +100,12 @@ public class EscogidosAdapter extends ArrayAdapter {
         Producto producto = items.get(position);
         final String img = producto.getImagen();
         final ImageView imagenProducto = (ImageView)listItemView.findViewById(R.id.imagenProducto);
-        //Log.d(TAG,URL_Image + img);
+        imagenProducto.setImageResource(R.drawable.error);
         request.add(
                 new ImageRequest(URL_Image + producto.getImagen(),
                         new Response.Listener<Bitmap>() {
                             @Override
                             public void onResponse(Bitmap response) {
-                                Log.d(TAG,URL_Image + img);
                                 imagenProducto.setImageBitmap(response);
                             }
                         }, 0, 0, null, null,
@@ -141,7 +140,8 @@ public class EscogidosAdapter extends ArrayAdapter {
                             objeto.getString("nombre"),
                             objeto.getString("descripcion"),
                             objeto.getString("precio"),
-                            img);
+                            img,
+                            objeto.getString("categoria"));
 
 
                     productos.add(producto);

@@ -27,14 +27,5 @@
         android:id="@+id/textoDescripcionP"
         android:layout_below="@+id/textoTituloP"
         android:layout_alignLeft="@+id/textoTituloP" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Medium Text"
-        android:id="@+id/textoPrecioP"
-        android:layout_below="@+id/textoDescripcionP"
-        android:layout_alignLeft="@+id/textoDescripcionP" />
-
 
 </RelativeLayout>
