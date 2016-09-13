@@ -83,18 +83,15 @@ public class Notices extends Activity {
         gridRecomendados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                Intent i = new Intent(getApplicationContext(),Item_Description.class);
-                i.putExtra("id",position);
-                i.putExtra("name",datos[position][0]);
-                i.putExtra("desc",datos[position][1]);
-                i.putExtra("price",datos[position][2]);
-                i.putExtra("source","rec");
-                startActivity(i);*/
                 Producto p = ea.getItem(position);
-                Log.d("Producto>>>", "Id: " + p.getId()
-                    + "\nNombre: " + p.getNombre() + "\nPrecio: " + p.getPrecio()
-                    + "\nImagen: " + p.getImagen());
+                Intent desc = new Intent(getApplicationContext(),Item_Description.class);
+                desc.putExtra("nombre",p.getNombre());
+                desc.putExtra("descripcion",p.getDescripcion());
+                desc.putExtra("precio",p.getPrecio());
+                desc.putExtra("correo",p.getCorreo());
+                desc.putExtra("imagen",p.getImagen());
+                desc.putExtra("User",user);
+                startActivity(desc);
             }
         });
         gridActualizaciones = (GridView)findViewById(R.id.gridNews);
@@ -104,18 +101,15 @@ public class Notices extends Activity {
         gridActualizaciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                Intent i = new Intent(getApplicationContext(),Item_Description.class);
-                i.putExtra("id",position + 3);
-                i.putExtra("name",datos[position + 3][0]);
-                i.putExtra("desc",datos[position + 3][1]);
-                i.putExtra("price",datos[position + 3][2]);
-                i.putExtra("source","rec");
-                startActivity(i);*/
                 Producto p = aa.getItem(position);
-                Log.d("Producto>>>", "Id: " + p.getId()
-                        + "\nNombre: " + p.getNombre() + "\nPrecio: " + p.getPrecio()
-                        + "\nImagen: " + p.getImagen());
+                Intent desc = new Intent(getApplicationContext(),Item_Description.class);
+                desc.putExtra("nombre",p.getNombre());
+                desc.putExtra("descripcion",p.getDescripcion());
+                desc.putExtra("precio",p.getPrecio());
+                desc.putExtra("correo",p.getCorreo());
+                desc.putExtra("imagen",p.getImagen());
+                desc.putExtra("User",user);
+                startActivity(desc);
             }
         });
     }
@@ -143,11 +137,13 @@ public class Notices extends Activity {
 
     public void Recommendations (View view){
         Intent i = new Intent(this, Recomendations.class);
+        i.putExtra("User",user);
         startActivity(i);
     }
 
     public void Updates (View view){
         Intent u = new Intent(this,Actualizaciones.class);
+        u.putExtra("User",user);
         startActivity(u);
     }
 

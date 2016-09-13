@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +29,21 @@ public class Categorias extends Activity {
         listCat = (ListView)findViewById(R.id.listCategoria);
         adapter = new CategoriasAdapter(this,cat);
         listCat.setAdapter(adapter);
+        listCat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Producto p = adapter.getItem(position);
+                Intent desc = new Intent(getApplicationContext(),Item_Description.class);
+                desc.putExtra("nombre",p.getNombre());
+                desc.putExtra("descripcion",p.getDescripcion());
+                desc.putExtra("precio",p.getPrecio());
+                desc.putExtra("correo",p.getCorreo());
+                desc.putExtra("imagen",p.getImagen());
+                desc.putExtra("User",user);
+                startActivity(desc);
+            }
+        });
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
     }

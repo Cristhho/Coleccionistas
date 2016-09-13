@@ -21,6 +21,7 @@
     <string name="txtDescription">Descripción</string>
     <string name="txtItemDesc">Descripción del artículo seleccionado</string>
     <string name="txtPrice">Precio</string>
+    <string name="correo">Correo</string>
 
     <string-array name="tags">
         <item>monedas</item>

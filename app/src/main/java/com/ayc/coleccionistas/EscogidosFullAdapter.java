@@ -99,7 +99,8 @@ public class EscogidosFullAdapter extends BaseAdapter {
                             objeto.getString("descripcion"),
                             objeto.getString("precio"),
                             img,
-                            objeto.getString("categoria"));
+                            objeto.getString("categoria"),
+                            objeto.getString("correo"));
 
                     productos.add(producto);
 
