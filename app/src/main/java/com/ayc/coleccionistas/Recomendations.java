@@ -15,7 +15,7 @@ public class Recomendations extends Activity {
 
     private ListView listaE;
     EscogidosFullAdapter adapter ;
-    private String user;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class Recomendations extends Activity {
         listaE = (ListView)findViewById(R.id.ListEscogidos);
 
         user = getIntent().getStringExtra("User");
+        userid = getIntent().getStringExtra("userid");
 
         adapter = new EscogidosFullAdapter(Recomendations.this);
         listaE.setAdapter(adapter);
@@ -42,6 +43,7 @@ public class Recomendations extends Activity {
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",user);
+                desc.putExtra("userid",userid);
                 startActivity(desc);
             }
         });
@@ -57,6 +59,7 @@ public class Recomendations extends Activity {
             case android.R.id.home:
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
                 upIntent.putExtra("User",user);
+                upIntent.putExtra("userid",userid );
                 NavUtils.navigateUpTo(this,upIntent);
                 return true;
         }

@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PerfilAdapter    extends BaseAdapter {
+public class PerfilAdapter extends BaseAdapter {
 
     private static final String URL_Image = "http://10.0.2.2/coleccionistas";
     private static  String URL = "http://10.0.2.2/coleccionistas/consuta_perfil.php?userid=";
@@ -43,13 +43,13 @@ public class PerfilAdapter    extends BaseAdapter {
     private Context mContext;
 
 
-    public PerfilAdapter(Context c, String userid){
+    public PerfilAdapter(Context c,final String userid){
         mContext = c;
         //USERID = userid;
-        URL = "http://10.0.2.2/coleccionistas/consuta_perfil.php?userid="+userid;
+        URL = "http://10.0.2.2/coleccionistas/consuta_perfil.php";
         request = Volley.newRequestQueue(c);
         request.add(
-                new StringRequest(Request.Method.GET, URL,
+                new StringRequest(Request.Method.POST, URL,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -66,19 +66,12 @@ public class PerfilAdapter    extends BaseAdapter {
                             public void onErrorResponse(VolleyError error) {
                                 Log.e(TAG, "ERROR VOLLEY: " + error.getMessage());
                             }
-                        })
-                {
+                        }) {
                     @Override
-                    public Map<String, String> getHeaders() {
-                        Map<String, String> headers = new HashMap<String, String>();
-                        headers.put("Content-Type", "application/json; charset=utf-8");
-                        headers.put("Accept", "application/json");
-                        return headers;
-                    }
-
-                    @Override
-                    public String getBodyContentType() {
-                        return "application/json; charset=utf-8" + getParamsEncoding();
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> parameters = new HashMap<>();
+                        parameters.put("userid", userid);
+                        return parameters;
                     }
                 }
         );

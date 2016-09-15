@@ -94,6 +94,7 @@ public class Notices extends Activity {
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",user);
+                desc.putExtra("userid",userid );
                 startActivity(desc);
             }
         });
@@ -112,6 +113,7 @@ public class Notices extends Activity {
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",user);
+                desc.putExtra("userid",userid );
                 startActivity(desc);
             }
         });
@@ -148,12 +150,14 @@ public class Notices extends Activity {
     public void Recommendations (View view){
         Intent i = new Intent(this, Recomendations.class);
         i.putExtra("User",user);
+        i.putExtra("userid",userid );
         startActivity(i);
     }
 
     public void Updates (View view){
         Intent u = new Intent(this,Actualizaciones.class);
         u.putExtra("User",user);
+        u.putExtra("userid",userid);
         startActivity(u);
     }
 
@@ -163,11 +167,12 @@ public class Notices extends Activity {
             String cat = tagTitles[position - 1];
             categoria.putExtra("categoria", cat);
             categoria.putExtra("User",user);
+            categoria.putExtra("userid",userid);
             startActivity(categoria);
         } else {
             Intent Agregar = new Intent(this, perfil.class);
 
-            Agregar.putExtra("userid",userid );
+            Agregar.putExtra("userid",userid);
             Agregar.putExtra("User",user);
             startActivity(Agregar);
         }

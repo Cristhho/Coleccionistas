@@ -37,6 +37,7 @@ String username , userid;
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",username);
+                desc.putExtra("userid",userid );
                 startActivity(desc);
             }
         });

@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
-        android:layout_marginTop="42dp"
         android:src="@drawable/usuario"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -24,7 +23,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textViewNOmbre"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true"
         android:textColor="@color/Brow_AC_Bold" />
@@ -33,7 +32,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar"
+        android:text="@string/agregar"
         android:id="@+id/button2"
         android:layout_marginTop="17dp"
         android:background="@drawable/btn"
@@ -59,6 +58,6 @@
         android:id="@+id/gridPerfil"
         android:layout_below="@+id/textView"
         android:layout_toStartOf="@+id/textViewNOmbre"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
