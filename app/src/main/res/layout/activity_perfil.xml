@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Colección"
+        android:text="Tu colección"
         android:id="@+id/textView"
         android:layout_alignBottom="@+id/button2"
         android:layout_alignParentStart="true"
