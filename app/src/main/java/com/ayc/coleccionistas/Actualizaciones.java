@@ -16,7 +16,7 @@ public class Actualizaciones extends Activity {
 
     private ListView listaAct;
     ActualizacionesFullAdapter adapter ;
-    private String user;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class Actualizaciones extends Activity {
         setContentView(R.layout.activity_actualizaciones);
         listaAct = (ListView)findViewById(R.id.listActualizacion);
         user = getIntent().getStringExtra("User");
+        userid = getIntent().getStringExtra("userid");
         adapter = new ActualizacionesFullAdapter(Actualizaciones.this);
         listaAct.setAdapter(adapter);
         listaAct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -37,6 +38,7 @@ public class Actualizaciones extends Activity {
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",user);
+                desc.putExtra("userid",userid);
                 startActivity(desc);
             }
         });
@@ -52,6 +54,7 @@ public class Actualizaciones extends Activity {
             case android.R.id.home:
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
                 upIntent.putExtra("User",user);
+                upIntent.putExtra("userid",userid);
                 NavUtils.navigateUpTo(this,upIntent);
                 return true;
         }

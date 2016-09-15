@@ -23,7 +23,7 @@ public class Item_Description extends Activity {
     private static final String URL_Image = "http://10.0.2.2/coleccionistas";
     private static final String TAG = Item_Description.class.getSimpleName();
     private RequestQueue request;
-    private String user;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class Item_Description extends Activity {
         itemImg = (ImageView)findViewById(R.id.imgItem);
         Intent i = getIntent();
         user = i.getExtras().getString("User");
+        userid = getIntent().getStringExtra("userid");
         String name = i.getExtras().getString("nombre");
         String description = i.getExtras().getString("descripcion");
         String price = i.getExtras().getString("precio");
@@ -73,6 +74,7 @@ public class Item_Description extends Activity {
             case android.R.id.home:
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
                 upIntent.putExtra("User",user);
+                upIntent.putExtra("userid",userid );
                 NavUtils.navigateUpTo(this,upIntent);
                 return true;
         }

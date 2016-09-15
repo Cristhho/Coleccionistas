@@ -15,7 +15,7 @@ public class Categorias extends Activity {
     private TextView categoria;
     private ListView listCat;
     CategoriasAdapter adapter;
-    private String user;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class Categorias extends Activity {
         setContentView(R.layout.activity_categorias);
 
         user = getIntent().getStringExtra("User");
+        userid = getIntent().getStringExtra("userid");
         categoria = (TextView)findViewById(R.id.txtCategoria);
         String cat = getIntent().getStringExtra("categoria");
         categoria.setText(cat);
@@ -40,6 +41,7 @@ public class Categorias extends Activity {
                 desc.putExtra("correo",p.getCorreo());
                 desc.putExtra("imagen",p.getImagen());
                 desc.putExtra("User",user);
+                desc.putExtra("userid",userid );
                 startActivity(desc);
             }
         });
@@ -55,6 +57,7 @@ public class Categorias extends Activity {
             case android.R.id.home:
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
                 upIntent.putExtra("User",user);
+                upIntent.putExtra("userid",userid );
                 NavUtils.navigateUpTo(this,upIntent);
                 return true;
         }

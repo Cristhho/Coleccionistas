@@ -40,7 +40,7 @@ public class AgregarProducto extends Activity {
         setContentView(R.layout.activity_agregar_producto);
 
         userid = getIntent().getStringExtra("userid");
-        name = getIntent().getStringExtra("user");
+        name = getIntent().getStringExtra("User");
         System.out.println(userid);
 
         request = Volley.newRequestQueue(this);

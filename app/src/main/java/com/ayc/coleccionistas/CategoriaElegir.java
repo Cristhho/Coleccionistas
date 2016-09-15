@@ -15,46 +15,52 @@ public class CategoriaElegir extends Activity {
          categoria = new Intent(this, Categorias.class);
 
          userid = getIntent().getStringExtra("userid");
-         user = getIntent().getStringExtra("user");
+         user = getIntent().getStringExtra("User");
 
     }
     public void carro(View view) {
-        cat = "Autos";
+        cat = "autos";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
     }
     public void juegos(View view) {
-        cat = "Video Juegos";
+        cat = "videojuegos";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
 
     }
     public void comics(View view) {
-        cat = "Comics";
+        cat = "comics";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
     }
     public void otros(View view) {
-        cat = "Otros";
+        cat = "otros";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
 
     }
     public void monedas(View view) {
-        cat = "Monedas";
+        cat = "monedas";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
 
     }
     public void pintura(View view) {
-        cat = "Pinturas";
+        cat = "pinturas";
         categoria.putExtra("categoria", cat);
         categoria.putExtra("User",user);
+        categoria.putExtra("userid",userid );
         startActivity(categoria);
 
     }
