@@ -22,7 +22,7 @@
     <string name="txtItemDesc">Descripción del artículo seleccionado</string>
     <string name="txtPrice">Precio</string>
     <string name="correo">Correo</string>
-
+    <string name="textoOpciones">Opciones</string>
     <string-array name="tags">
         <item>monedas</item>
         <item>figuras de accion</item>

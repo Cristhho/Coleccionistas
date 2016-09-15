@@ -28,7 +28,7 @@ public class RegistrarUsuario extends Activity {
     private String user,pass,pass2,lastname,mail,name;
     private boolean fuser = false;
     static String NAME ="";
-    private static final String TAG = Home.class.getSimpleName();
+    private static final String TAG = RegistrarUsuario.class.getSimpleName();
     private RequestQueue request;
 
     private static  String URL_CONSULTA_SINGIN ="http://10.0.2.2/coleccionistas/singin.php";
@@ -69,19 +69,16 @@ public class RegistrarUsuario extends Activity {
                     Toast.makeText(getApplicationContext(),
                             mensaje,Toast.LENGTH_SHORT).show();
                     break;
+                case "4":
+                    Toast.makeText(getApplicationContext(),
+                            mensaje,Toast.LENGTH_SHORT).show();
+                    break;
             }
         }catch (JSONException e){
             e.printStackTrace();
         }
     }
     public void Singin(View v){
-       // user,pass,lastname,mail,name;
-
-
-
-
-
-
         user = userE.getText().toString() ;
         lastname  =  lastnameE.getText().toString() ;
         mail = mailE.getText().toString() ;
@@ -90,7 +87,7 @@ public class RegistrarUsuario extends Activity {
         pass2 =  password2E.getText().toString() ;
        // http://192.168.1.3/coleccionistas/singin.php?nombre=Alberto&apellido=Ordonez+Urgiles&usuarioR=Alberto&contrasena=1234&contrasena2=1234&correo=alberto%40gmail.com
 
-        URL_CONSULTA_SINGIN  = "http://108.170.38.42/coleccionistas/singin.php?nombre="+name+"&apellido="+lastname+"&usuarioR="+user+"&contrasena="+pass+"&contrasena2="+pass2+"&correo="+mail;
+        URL_CONSULTA_SINGIN  = "http://10.0.2.2/coleccionistas/singin.php?nombre="+name+"&apellido="+lastname+"&usuarioR="+user+"&contrasena="+pass+"&contrasena2="+pass2+"&correo="+mail;
         System.out.println(URL_CONSULTA_SINGIN );
 
         request.add(

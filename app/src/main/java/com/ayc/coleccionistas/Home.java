@@ -119,10 +119,12 @@ public void SingIng (View view){
                     JSONObject objeto= jsonArray.getJSONObject(i);
 
                     String name = objeto.getString("usuario_usuario");
+                    String id = objeto.getString("usuario_id");
 
                     Intent intend = new Intent(getApplicationContext(),Notices.class );
 
                     intend.putExtra("User",name);
+                    intend.putExtra("userid",id);
                     startActivity(intend);
 
 

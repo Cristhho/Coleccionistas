@@ -27,7 +27,7 @@ public class Notices extends Activity {
     private CharSequence mTitle;
     EscogidosAdapter ea;
     ActualizacionesAdapter aa;
-    private String user;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +38,19 @@ public class Notices extends Activity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList = (ListView) findViewById(R.id.left_drawer);
         mTitle = mDrawerTitle = getTitle();
+
         user = getIntent().getStringExtra("User");
+        userid = getIntent().getStringExtra("userid");
+
         ArrayList<DrawerItem> items = new ArrayList<DrawerItem>();
         items.add(new DrawerItem(user,R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[0],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[1],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[2],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[3],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[4],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[5],R.drawable.icon));
-        items.add(new DrawerItem(tagTitles[6],R.drawable.icon));
+        items.add(new DrawerItem(tagTitles[0],R.drawable.monedasicon));
+        items.add(new DrawerItem(tagTitles[1],R.drawable.roboticon));
+        items.add(new DrawerItem(tagTitles[2],R.drawable.comicicon));
+        items.add(new DrawerItem(tagTitles[3],R.drawable.gameicon));
+        items.add(new DrawerItem(tagTitles[4],R.drawable.pinturaicon));
+        items.add(new DrawerItem(tagTitles[5],R.drawable.carroicon));
+        items.add(new DrawerItem(tagTitles[6],R.drawable.otrosicon));
         drawerList.setAdapter(new DrawerListAdapter(this, items));
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -113,6 +116,13 @@ public class Notices extends Activity {
             }
         });
     }
+    public void OnclickCategorias (View view){
+        Intent i = new Intent(this, CategoriaElegir.class);
+        i.putExtra("User",user);
+        i.putExtra("userid",userid);
+        startActivity(i);
+
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -155,7 +165,11 @@ public class Notices extends Activity {
             categoria.putExtra("User",user);
             startActivity(categoria);
         } else {
-            Log.d("Usuario:",user);
+            Intent Agregar = new Intent(this, perfil.class);
+
+            Agregar.putExtra("userid",userid );
+            Agregar.putExtra("User",user);
+            startActivity(Agregar);
         }
         drawerLayout.closeDrawer(drawerList);
     }
