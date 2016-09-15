@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ayc.coleccionistas.Categorias">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:goIcon="@color/Brown_AC"
+        android:background="@color/Brown_AC" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCategoria"
+        android:text="@string/txtBtnCategories"
+        android:layout_below="@+id/searchView2"
+        android:textColor="@color/Brow_AC_Bold"
+        android:textSize="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listCategoria"
+        android:layout_below="@+id/txtCategoria">
+    </ListView>
+</RelativeLayout>

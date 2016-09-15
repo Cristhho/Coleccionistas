@@ -3,70 +3,66 @@ package com.ayc.coleccionistas;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 
 public class Recomendations extends Activity {
 
-    private GridView gridRecomendados;
-    private String datos[][] = {
-            {"Botella Coca-Cola 60\'s",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$60,00"},
-            {"Moneda celta 500 años",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$1000,00"},
-            {"Detecctive Comic #27",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$5000,00"},
-            {"Consola antigua año 90",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$500,00"},
-            {"Figura de action de superman 70\'s",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$800,00"},
-            {"Llave antigua 200 años",
-                    "Donec id elit non mi porta gravida at eget metus. " +
-                            "Fusce dapibus, tellus ac cursus commodo, " +
-                            "tortor mauris condimentum nibh, " +
-                            "ut fermentum massa justo sit amet risus",
-                    "$100,00"}
-    };
+    private ListView listaE;
+    EscogidosFullAdapter adapter ;
+    private String user, userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recomendations);
-        gridRecomendados = (GridView)findViewById(R.id.gridEscogidosFull);
-        EscogidosFullAdapter efa = new EscogidosFullAdapter(this);
-        gridRecomendados.setAdapter(efa);
-        gridRecomendados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaE = (ListView)findViewById(R.id.ListEscogidos);
+
+        user = getIntent().getStringExtra("User");
+        userid = getIntent().getStringExtra("userid");
+
+        adapter = new EscogidosFullAdapter(Recomendations.this);
+        listaE.setAdapter(adapter);
+
+
+        listaE.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getApplicationContext(),Item_Description.class);
-                i.putExtra("id",position);
-                i.putExtra("name",datos[position][0]);
-                i.putExtra("desc",datos[position][1]);
-                i.putExtra("price",datos[position][2]);
-                i.putExtra("source","rec");
-                startActivity(i);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Producto p = adapter.getItem(i);
+                Intent desc = new Intent(getApplicationContext(),Item_Description.class);
+                desc.putExtra("nombre",p.getNombre());
+                desc.putExtra("descripcion",p.getDescripcion());
+                desc.putExtra("precio",p.getPrecio());
+                desc.putExtra("correo",p.getCorreo());
+                desc.putExtra("imagen",p.getImagen());
+                desc.putExtra("User",user);
+                desc.putExtra("userid",userid);
+                startActivity(desc);
             }
         });
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                Intent upIntent = NavUtils.getParentActivityIntent(this);
+                upIntent.putExtra("User",user);
+                upIntent.putExtra("userid",userid );
+                NavUtils.navigateUpTo(this,upIntent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Coleccionistas</string>
+    <string name="app_name">AyC</string>
     <string name="txtname">Nombre:</string>
+    <string name="txtApellido">Apellido:</string>
     <string name="txtuser">Usuario:</string>
     <string name="txtpassword">Contraseña:</string>
     <string name="txtmail">Correo:</string>
@@ -15,11 +16,25 @@
     <string name="txtNAcualizacion">Nuevas Actualizaciones</string>
     <string name="txtDeNActualizacion">Últimos articulos agregados</string>
     <string name="txtVerMas">Ver más</string>
+    <string name="agregar">Agregar</string>
 
     <string name="txtItemName">Nombre del articulo</string>
     <string name="txtDescription">Descripción</string>
     <string name="txtItemDesc">Descripción del artículo seleccionado</string>
     <string name="txtPrice">Precio</string>
+    <string name="correo">Correo</string>
+    <string name="textoOpciones">Opciones</string>
+    <string-array name="tags">
+        <item>monedas</item>
+        <item>figuras de accion</item>
+        <item>comics</item>
+        <item>videojuegos</item>
+        <item>pinturas</item>
+        <item>autos</item>
+        <item>otros</item>
+    </string-array>
 
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
 
 </resources>

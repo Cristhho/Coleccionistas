@@ -41,14 +41,11 @@
         android:goIcon="@color/Brown_AC"
         android:background="@color/Brown_AC" />
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/gridEscogidosFull"
-        android:verticalSpacing="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textDescrip"
-        android:numColumns="3">
-    </GridView>
+   <ListView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/ListEscogidos"
+       android:layout_below="@+id/textDescrip">
+   </ListView>
 
 </RelativeLayout>

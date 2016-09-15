@@ -43,33 +43,14 @@
         android:layout_below="@+id/textViewName"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textViewMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtmail"
-        android:textColor="@color/Brown_AC"
-        android:layout_below="@+id/editTextName"
-        android:layout_alignStart="@+id/editTextName"/>
 
-    <EditText
-        android:id="@+id/editTextMail"
-        android:layout_below="@+id/textViewMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:gravity="center_vertical"
-        android:ems="10"
-        android:textColor="@color/Brown_AC"
-        android:singleLine="false"
-        android:layout_centerHorizontal="true" />
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtpassword"
         android:textColor="@color/Brown_AC"
-        android:layout_below="@+id/editTextMail"
+        android:layout_below="@+id/editTextName"
         android:layout_alignStart="@+id/editTextName"/>
 
     <EditText
@@ -83,16 +64,27 @@
         android:textColor="@color/Brown_AC" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/txtBtnSingIng"
+    android:id="@+id/buttonSing"
+    android:onClick="Longin"
+    android:textColor="@color/Brown_AC"
+    android:singleLine="true"
+    android:background="@drawable/btn"
+    android:layout_below="@+id/editTextPassword"
+    android:layout_toEndOf="@+id/textViewPassword" />
+
+    <TextView
+        android:id="@+id/Sin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txtBtnSingIng"
-        android:id="@+id/buttonSing"
         android:onClick="SingIng"
+        android:text="SingIn?"
+
         android:textColor="@color/Brown_AC"
-        android:singleLine="true"
-        android:background="@drawable/btn"
-        android:layout_below="@+id/editTextPassword"
-        android:layout_toEndOf="@+id/textViewPassword" />
+        android:layout_below="@+id/buttonSing"
+        android:layout_alignEnd="@+id/editTextPassword" />
 
 </RelativeLayout>

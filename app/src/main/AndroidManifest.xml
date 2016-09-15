@@ -1,26 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.ayc.coleccionistas"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ayc.coleccionistas">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".Home">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Notices"/>
-        <activity android:name=".Recomendations"/>
-        <activity android:name=".Item_Description">
+        <activity android:name=".Notices" />
+        <activity
+            android:name=".Recomendations"
+            android:parentActivityName=".Notices">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Notices" />
         </activity>
-        <activity android:name=".Actualizaciones">
+        <activity
+            android:name=".Item_Description"
+            android:parentActivityName=".Notices">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Notices" />
         </activity>
+        <activity
+            android:name=".Actualizaciones"
+            android:parentActivityName=".Notices">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Notices" />
+        </activity>
+        <activity android:name=".RegistrarUsuario" />
+        <activity
+            android:name=".Categorias"
+            android:parentActivityName=".Notices">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Notices" />
+        </activity>
+        <activity android:name=".AgregarProducto" />
+        <activity android:name=".perfil" />
+        <activity android:name=".CategoriaElegir"></activity>
     </application>
 
 </manifest>
